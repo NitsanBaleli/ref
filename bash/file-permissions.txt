@@ -1,0 +1,4 @@
+//get numeric permission value
+stat --format '%a' filename
+stat -c '%a' filename
+

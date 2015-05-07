@@ -1,0 +1,19 @@
+http://log.liminastudio.com/writing/tutorials/sublime-tunnel-of-love-how-to-edit-remote-files-with-sublime-text-via-an-ssh-tunnel
+
+
+
+install package rsub
+Once it’s installed, get on your terminal and do
+  nano ~/.ssh/config
+
+Paste the following lines:
+  Host your_remote_server.com
+      RemoteForward 52698 127.0.0.1:52698
+
+
+install on server:
+  sudo wget -O /usr/local/bin/rsub https://raw.github.com/aurora/rmate/master/rmate --no-check-certificate
+  sudo chmod +x /usr/local/bin/rsub
+
+SSH the server
+  ssh -R 52698:localhost:52698 root@199.231.211.22

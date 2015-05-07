@@ -1,0 +1,5 @@
+du -h /path/to/dir
+  //633M  backup/
+
+df -h
+  //show total space

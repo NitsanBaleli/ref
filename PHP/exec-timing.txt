@@ -1,0 +1,5 @@
+$start = microtime(true);
+while (...) {
+
+}
+$time_elapsed_us = microtime(true) - $start;

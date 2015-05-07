@@ -1,0 +1,14 @@
+dump
+-----------
+one or more tables into a file:
+	 mysqldump -u root -ptmppassword dbname table2 > /tmp/sugarcrm_accounts_contacts.sql
+
+restore from file:
+	mysql -u root -ptmppassword dbname < /tmp/sugarcrm.sql
+
+entire DB to a file:
+	mysqldump -u root -p DBname > /mybackup01.sql
+
+conditional dump
+  mysqldump -uroot -p db_name table_name --where='id<1000000'
+  SELECT * INTO OUTFILE 'data_path.sql' from table where id<100000

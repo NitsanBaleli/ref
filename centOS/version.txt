@@ -1,0 +1,5 @@
+cat /etc/redhat-release
+lsb_release -a
+cat /etc/issue
+uname -a (gives the version of OS)
+cat /etc/*-release (same)

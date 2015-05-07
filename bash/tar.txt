@@ -1,0 +1,10 @@
+tar -zxvf yourfile.tar.gz
+tar czvf freepbxadm.tar.gz  admin/
+tar -jtvf file-name.tar.bz2 | less (display tar content)
+
+tar czvf /tmp/a2b-backup.tar.gz /usr/local/src/a2billing
+
+
+
+
+

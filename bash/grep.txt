@@ -1,0 +1,48 @@
+
+cathy ~> grep root /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+operator:x:11:0:operator:/root:/sbin/nologin
+
+cathy ~> grep -n root /etc/passwd
+1:root:x:0:0:root:/root:/bin/bash
+12:operator:x:11:0:operator:/root:/sbin/nologin
+      >>show line numbers
+
+
+cathy ~> grep -v bash /etc/passwd | grep -v nologin
+sync:x:5:0:sync:/sbin:/bin/sync
+      >>>>checks which users are not using bash, but accounts with the nologin shell are not displayed.
+
+
+cathy ~> grep -c false /etc/passwd
+7
+      >>>counts the number of accounts that have /bin/false as the shell
+
+
+cathy ~> grep -i ps ~/.bash* | grep -v history
+/home/cathy/.bashrc:PS1="\[\033[1;44m\]$USER is in \w\[\033[0m\] "
+      >>>>displays the lines from all the files in her home directory starting with ~/.bash, excluding matches containing the string history, so as to exclude matches from ~/.bash_history which might contain the same string, in upper or lower cases. Note that the search is for the string "ps", and not for the command ps.
+
+
+
+
+grep with REGEX
+---------------
+
+cathy ~> grep ^root /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+    >>>>>>From the previous example, we now exclusively want to display lines starting with the string "root":
+
+cathy ~> grep :$ /etc/passwd
+news:x:9:13:news:/var/spool/news:
+      >>>If we want to see which accounts have no shell assigned whatsoever, we search for lines ending in ":":
+
+cathy ~> grep export ~/.bashrc | grep '\<PATH'
+  export PATH="/bin:/usr/lib/mh:/lib:/usr/bin:/usr/local/bin:/usr/ucb:/usr/dbin:$PATH"
+      >>>To check that PATH is exported in ~/.bashrc, first select "export" lines and then search for lines starting with the string "PATH", so as not to display MANPATH and other possible paths:
+    Similarly, \> matches the end of a word.
+
+If you want to find a string that is a separate word (enclosed by spaces), it is better use the -w, as in this example where we are displaying information for the root partition:
+
+cathy ~> grep -w / /etc/fstab
+LABEL=/                 /                       ext3    defaults        1 1

@@ -1,0 +1,4 @@
+q: command line (with history)
+
+:(up-arrow/down-arrow)
+

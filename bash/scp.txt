@@ -1,0 +1,1 @@
+scp -P 2222 /path/to/file/  root@serverIP:/remote/path/to/save/to/

@@ -1,0 +1,5 @@
+error_log(
+      "\n" .
+      date('m/d/Y h:i:s', time()) . '>>>> ' . print_r($customer, true)
+      . "\n"
+  , 3, "/tmp/test-log.txt");

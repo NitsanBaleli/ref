@@ -1,0 +1,7 @@
+http://www.cyberciti.biz/faq/howto-search-find-file-for-text-string/
+find . | xargs grep 'string' -sl
+grep -R "AGI_AsteriskManager" /var/www/html/a2billing
+
+find / -type f -name httpd.conf
+//Find all perl (*.pl) files in current directory:
+find . -name '*.pl'
