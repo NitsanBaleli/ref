@@ -1,4 +1,4 @@
-tar -zxvf yourfile.tar.gz
+tar -xvf yourfile.tar.gz
 tar czvf freepbxadm.tar.gz  admin/
 tar -jtvf file-name.tar.bz2 | less (display tar content)
 
