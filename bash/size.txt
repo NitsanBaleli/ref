@@ -3,3 +3,4 @@ du -h /path/to/dir
 
 df -h
   //show total space
+

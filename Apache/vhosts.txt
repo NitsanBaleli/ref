@@ -1,0 +1,26 @@
+
+
+place a .conf file in 
+  /etc/apache2/sites-available
+
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName dash.com
+    ServerAlias www.dash.com dash.com
+    DocumentRoot /var/www/html/dashboard
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    
+    <Directory /var/www/html/dashboard>
+      AllowOverride All
+      Require all granted
+    </Directory>
+
+</VirtualHost>
+
+edit 
+  /etc/hosts
+  to map the serveralias to localhost
+
+activate the .conf file
+  sudo a2ensite file.conf
