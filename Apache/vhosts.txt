@@ -5,9 +5,9 @@ place a .conf file in
 
 <VirtualHost *:80>
     ServerAdmin admin@example.com
-    ServerName dash.com
-    ServerAlias www.dash.com dash.com
-    DocumentRoot /var/www/html/dashboard
+    ServerName board.com
+    ServerAlias www.board.com board.com
+    DocumentRoot /var/www/html/dashboard/dist/app
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
     
@@ -24,3 +24,6 @@ edit
 
 activate the .conf file
   sudo a2ensite file.conf
+
+# disable site
+  sudo a2dissite SITECONFIG.FILE
