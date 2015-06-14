@@ -1,6 +1,6 @@
 
 
-place a .conf file in 
+place a .conf file in
   /etc/apache2/sites-available
 
 <VirtualHost *:80>
@@ -18,7 +18,7 @@ place a .conf file in
 
 </VirtualHost>
 
-edit 
+edit
   /etc/hosts
   to map the serveralias to localhost
 
