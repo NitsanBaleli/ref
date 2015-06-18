@@ -12,3 +12,9 @@ entire DB to a file:
 conditional dump
   mysqldump -uroot -p db_name table_name --where='id<1000000'
   SELECT * INTO OUTFILE 'data_path.sql' from table where id<100000
+
+
+
+
+  find duplicates:
+    SELECT name, COUNT(*) c FROM table GROUP BY name HAVING c > 1;
